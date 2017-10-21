@@ -1,3 +1,28 @@
 page-about {
 
 }
+
+.header{
+
+  .toolbar-background-md {
+    background-color:#7ebcae;
+  }
+  .toolbar-title {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.fixed {
+  z-index:100;
+}
+
+.avatar {
+  display: inline-block;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: super;
+}
+

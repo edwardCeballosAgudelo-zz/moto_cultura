@@ -1,11 +1,34 @@
-<ion-header>
+<ion-header class="header">
   <ion-navbar>
     <ion-title>
-      About
+      Puntos de accidente
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-refresher (ionRefresh)="recargar_puntos($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list reorder="true">
+    <ion-item-sliding *ngFor="let item of puntosAccidentes; let i= index">
+      <ion-item>
+        <ion-avatar class="avatar">
+          <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-128.png">
+        </ion-avatar>
+        <h2 class="name">{{ item.nombre }}</h2>
+      </ion-item>
+      <ion-item-options slide="right">
+        <button ion-button color="danger" (click)="deletePuntoAccidente(item._id)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+        <button ion-button color="info" (click)="editPuntoAccidente(item)">
+          <ion-icon name="md-create"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab class="fixed" (click)="newPoint()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>

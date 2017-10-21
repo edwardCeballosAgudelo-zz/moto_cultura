@@ -1,0 +1,36 @@
+<ion-header class="header">
+  <ion-navbar>
+    <ion-title>
+      Nuevo Puntos de accidente
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="savePuntoAccidente()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input type="text" placeholder="Nombre" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Descripción:</ion-label>
+        <ion-input type="text" placeholder="Descripción" [(ngModel)]="descripcion" name="picture"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Longitud:</ion-label>
+        <ion-input type="number" placeholder="Longitud" [(ngModel)]="longitud" name="price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Latitud:</ion-label>
+        <ion-input type="text" placeholder="latitud" [(ngModel)]="latitud" name="category"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Distancia:</ion-label>
+        <ion-input type="text" placeholder="distancia" [(ngModel)]="distancia" name="description"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit">Guardar</button>
+    </div>
+  </form>
+</ion-content>
